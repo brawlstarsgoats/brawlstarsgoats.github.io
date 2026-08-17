@@ -5,9 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Serveur Discord — Brawl Stars Goats</title>
 <meta name="description" content="Rejoins le serveur Discord Brawl Stars Goats : recrutement de club, support par ticket, événements, salons stratégie et communauté active 24/7.">
+<script>
+(function(){
+  var pageLang = 'fr';
+  var nav = navigator.language || navigator.userLanguage || 'fr';
+  var browserLang = nav.slice(0,2).toLowerCase();
+  if (browserLang && browserLang !== pageLang && document.cookie.indexOf('googtrans=') === -1) {
+    document.cookie = 'googtrans=/' + pageLang + '/' + browserLang + ';path=/';
+  }
+})();
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({ pageLanguage: 'fr', autoDisplay: false }, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="google_translate_element"></div>
 
 <nav class="site-nav">
   <div class="wrap">
