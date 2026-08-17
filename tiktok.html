@@ -5,9 +5,24 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Stats TikTok en direct — Brawl Stars Goats</title>
 <meta name="description" content="Abonnés, likes et vidéos des comptes TikTok Brawl Stars Goats, mis à jour en temps réel. Suis Dejvsk1 et le reste de la team.">
+<script>
+(function(){
+  var pageLang = 'fr';
+  var nav = navigator.language || navigator.userLanguage || 'fr';
+  var browserLang = nav.slice(0,2).toLowerCase();
+  if (browserLang && browserLang !== pageLang && document.cookie.indexOf('googtrans=') === -1) {
+    document.cookie = 'googtrans=/' + pageLang + '/' + browserLang + ';path=/';
+  }
+})();
+function googleTranslateElementInit(){
+  new google.translate.TranslateElement({ pageLanguage: 'fr', autoDisplay: false }, 'google_translate_element');
+}
+</script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async></script>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<div id="google_translate_element"></div>
 
 <nav class="site-nav">
   <div class="wrap">
@@ -45,22 +60,23 @@
       <p>Le créateur principal de la communauté : highlights, astuces et moments forts publiés régulièrement.</p>
     </div>
 
-    <div class="creator-card cut-card reveal" style="max-width:520px;">
+    <div class="creator-card cut-card reveal" style="max-width:520px;" data-tiktok-card data-username="Dejvsk1">
       <div class="creator-head">
-        <div class="creator-avatar">D1</div>
+        <div class="creator-avatar" data-role="avatar">D1</div>
         <div>
           <div class="creator-name">Dejvsk1</div>
           <div class="creator-handle">@Dejvsk1 sur TikTok</div>
         </div>
       </div>
-      <div class="creator-embed-wrap">
-        <iframe
-          src="https://livecounts.nl/tiktok-realtime/embed/?u=Dejvsk1"
-          title="Compteur d'abonnés TikTok en direct de Dejvsk1"
-          loading="lazy" frameborder="0"></iframe>
+      <div class="creator-stats-grid">
+        <div class="c-stat"><span class="c-num is-loading" data-role="followers">—</span><span class="c-lbl">Abonnés</span></div>
+        <div class="c-stat"><span class="c-num is-loading" data-role="likes">—</span><span class="c-lbl">Likes</span></div>
+        <div class="c-stat"><span class="c-num is-loading" data-role="following">—</span><span class="c-lbl">Abonnements</span></div>
+        <div class="c-stat"><span class="c-num is-loading" data-role="videos">—</span><span class="c-lbl">Vidéos</span></div>
       </div>
+      <p class="creator-fallback-note" data-role="fallback">Les stats en direct sont momentanément indisponibles. Consulte le profil TikTok pour les chiffres à jour.</p>
       <div class="creator-meta">
-        <span class="live-pill"><span class="live-dot"></span>Compteur en direct</span>
+        <span class="live-pill"><span class="live-dot"></span><span data-role="status">Mise à jour en direct</span></span>
         <a href="https://www.tiktok.com/@Dejvsk1" target="_blank" rel="noopener" class="copy-btn" style="text-decoration:none;">Voir le profil ↗</a>
       </div>
     </div>
@@ -95,18 +111,18 @@
         <div class="req-list">
           <div class="req-item">
             <svg class="check" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>Source publique</b> — le compteur lit les chiffres publics de TikTok, les mêmes que ceux visibles dans l'app.</span>
+            <span><b>Source publique</b> — photo de profil, abonnés, likes, abonnements et vidéos viennent directement des données publiques du compte.</span>
           </div>
           <div class="req-item">
             <svg class="check" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            <span><b>Actualisation automatique</b> — pas besoin de rafraîchir la page, le nombre évolue tout seul.</span>
+            <span><b>Actualisation automatique</b> — la carte se rafraîchit toute seule à intervalle régulier, sans recharger la page.</span>
           </div>
           <div class="req-item">
             <svg class="check" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/><path d="M8 12.5l2.5 2.5L16 9.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
             <span><b>Facile à étendre</b> — chaque nouveau compte de la team peut être ajouté en quelques minutes.</span>
           </div>
         </div>
-        <p style="color:var(--ink-dim); font-size:14.5px;">Ces compteurs reposent sur un service tiers spécialisé dans le suivi public des réseaux sociaux. Si un profil est passé en privé ou change de pseudo, le compteur correspondant peut temporairement ne plus s'afficher — dans ce cas, le lien « Voir le profil » reste la source la plus fiable.</p>
+        <p style="color:var(--ink-dim); font-size:14.5px;">Ces chiffres passent par un service tiers spécialisé dans la lecture de données publiques TikTok. Si le service est temporairement indisponible ou qu'un profil est passé en privé, la carte l'indique clairement et le lien « Voir le profil » reste la source la plus fiable.</p>
       </div>
     </div>
   </div>
@@ -142,5 +158,6 @@
 </footer>
 
 <script src="script.js"></script>
+<script src="tiktok-stats.js"></script>
 </body>
 </html>
